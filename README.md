@@ -29,32 +29,32 @@ Aplicação de previsão do tempo desenvolvida em **React** com autenticação v
 
 ## 📦 Como rodar o projeto
 
-```bash
 # Clone o repositório
-git clone https://github.com/leofumagali/weather-app-react.git
+```git clone https://github.com/leofumagali/weather-app-react.git```
 
 # Acesse a pasta
-cd weather-app
+```cd weather-app```
 
 # Instale as dependências
-npm install
+```npm install```
 
 # Crie o arquivo de variáveis de ambiente:
-touch .env
+```touch .env```
 
 # Configure o .env com as suas chaves do Firebase e da OpenWeatherMap:
 
-
-```VITE_FIREBASE_API_KEY=XXXXXXXXXXXX
+```
+VITE_FIREBASE_API_KEY=XXXXXXXXXXXX
 VITE_FIREBASE_AUTH_DOMAIN=XXXXXXXX.firebaseapp.com
 VITE_FIREBASE_PROJECT_ID=XXXXXXXX
 VITE_FIREBASE_STORAGE_BUCKET=XXXXXXXX.appspot.com
 VITE_FIREBASE_MESSAGING_SENDER_ID=XXXXXXXX
 VITE_FIREBASE_APP_ID=XXXXXXXX
 
-VITE_OPENWEATHER_API_KEY=SUA_CHAVE_DA_OPENWEATHER```
+VITE_OPENWEATHER_API_KEY=SUA_CHAVE_DA_OPENWEATHER
+```
 
 # 🔑 Você pode obter sua chave da OpenWeatherMap em: https://openweathermap.org/api
 
 # Rode o app
-npm run dev
+```npm run dev```
