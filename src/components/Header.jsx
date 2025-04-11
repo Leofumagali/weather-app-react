@@ -26,16 +26,16 @@ const Header = () => {
     <header style={styles.header}>
       <div style={styles.left}>
         {location.pathname !== '/' && (
-          <button onClick={handleBack} style={styles.backButton}>← Voltar</button>
+          <button onClick={handleBack} style={styles.backButton}>← Return</button>
         )}
         <h1 style={styles.logo}>☀️ Weather App</h1>
       </div>
 
       {isAuthenticated && (
         <div style={styles.actions}>
-          <Link to="/favorites" style={styles.link}>⭐ Favoritos</Link>
+          <Link to="/favorites" style={styles.link}>⭐ Favorites</Link>
           <button onClick={handleLogout} style={styles.logoutButton}>
-            Sair
+            Logout
           </button>
         </div>
       )}

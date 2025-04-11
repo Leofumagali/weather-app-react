@@ -20,7 +20,7 @@ const Favorites = () => {
     <>
       <Header />
       <div style={styles.container}>
-        <h2>🌟 Cidades Favoritas</h2>
+        <h2>🌟 Favorite Cities</h2>
         {favorites.length === 0 ? (
           <p>Nenhuma cidade favoritada ainda.</p>
         ) : (
@@ -39,7 +39,7 @@ const Favorites = () => {
                   onClick={() => handleRemove(city.id)}
                   style={styles.removeButton}
                 >
-                  <i className="fas fa-trash-alt" style={styles.removeIcon}></i> Remover
+                  <i className="fas fa-trash-alt" style={styles.removeIcon}></i> Remove
                 </button>
               </div>
             ))}

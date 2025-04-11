@@ -27,7 +27,7 @@ const Login = () => {
     setInputError(errors)
 
     if (errors.email || errors.password) {
-      setError('Verifique os campos preenchidos.')
+      setError('Please check the filled fields.')
       return
     }
   
@@ -42,9 +42,9 @@ const Login = () => {
         err.code === 'auth/wrong-password' ||
         err.code === 'auth/invalid-credential'
       ) {
-        setError('E-mail ou senha incorretos.')
+        setError('Incorrect email or password.')
       } else {
-        setError('Erro ao fazer login. Tente novamente.')
+        setError('Error logging in. Please try again.')
       }
     }
   }
@@ -52,7 +52,7 @@ const Login = () => {
   return (
     <div style={styles.container}>
       <div style={styles.box}>
-        <h2 style={styles.title}>🔐 Login</h2>
+        <h2 style={styles.title}>🌤️ Weather App</h2>
         <form onSubmit={handleSubmit} style={styles.form}>
           <div style={styles.inputGroup}>
             <i
@@ -64,7 +64,7 @@ const Login = () => {
             />
             <input
               type="email"
-              placeholder="E-mail"
+              placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               style={{
@@ -84,7 +84,7 @@ const Login = () => {
             />
             <input
               type="password"
-              placeholder="Senha"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               style={{
@@ -96,12 +96,14 @@ const Login = () => {
 
           {error && <p style={styles.error}>{error}</p>}
 
-          <button type="submit" style={styles.button}>Entrar</button>
+          <button type="submit" style={styles.button}>Login</button>
           
           <div style={styles.signupContainer}>
             <p style={styles.signupText}>
-              Ainda não tem uma conta?
-              <Link to="/create-account" style={styles.signupLink}> Crie agora</Link>
+              Don't have an account?
+              <Link to="/create-account" style={styles.signupLink}>
+                {" "}Sign up now!
+              </Link>
             </p>
           </div>
         </form>

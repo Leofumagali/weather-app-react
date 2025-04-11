@@ -25,7 +25,7 @@ const CreateAccount = () => {
     setInputError(errors)
     
     if (errors.email || errors.password) {
-      setError('Preencha todos os campos corretamente.')
+      setError('Fill out all fields correctly.')
       return
     }
 
@@ -36,11 +36,11 @@ const CreateAccount = () => {
       navigate('/')
     } catch (err) {
       if (err.code === 'auth/email-already-in-use') {
-        setError('Este e-mail já está em uso.')
+        setError('This email is already in use.')
       } else if (err.code === 'auth/weak-password') {
-        setError('A senha precisa ter pelo menos 6 caracteres.')
+        setError('The password must be at least 6 characters long.')
       } else {
-        setError('Erro ao criar conta. Tente novamente.')
+        setError('Error creating account. Please try again.')
         console.error(err)
       }
     }
@@ -49,7 +49,7 @@ const CreateAccount = () => {
   return (
     <div style={styles.container}>
       <div style={styles.box}>
-        <h2 style={styles.title}>Criar Conta</h2>
+        <h2 style={styles.title}>Sign Up</h2>
         <form onSubmit={handleRegister} style={styles.form}>
           <div style={styles.inputGroup}>
             <i
@@ -61,7 +61,7 @@ const CreateAccount = () => {
             />
             <input
               type="email"
-              placeholder="E-mail"
+              placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               style={{
@@ -91,13 +91,15 @@ const CreateAccount = () => {
             />
           </div>
 
-          <button type="submit" style={styles.button}>Registrar</button>
+          <button type="submit" style={styles.button}>Register</button>
 
           {error && <p style={styles.error}>{error}</p>}
 
           <p style={styles.loginText}>
-            Já tem uma conta?{' '}
-            <Link to="/login" style={styles.loginLink}>Entrar</Link>
+            Already have an account?
+            <Link to="/login" style={styles.loginLink}>
+              Log in!
+            </Link>
           </p>
         </form>
       </div>

@@ -6,6 +6,7 @@ import { getWeatherEmoji } from '../utils/getWeatherEmoji'
 const Home = () => {
   const [city, setCity] = useState('')
   const [weather, setWeather] = useState(null)
+  console.log(weather)
   const [error, setError] = useState('')
   const [isFavorited, setIsFavorited] = useState(false)
 
@@ -22,7 +23,7 @@ const Home = () => {
 
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_OPENWEATHER_API_KEY}&units=metric&lang=pt_br`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_OPENWEATHER_API_KEY}&units=metric&lang=en_us`
       )
       setWeather(response.data)
       setError('')
@@ -61,18 +62,18 @@ const Home = () => {
       <Header />
       <div style={styles.container}>
         <div style={styles.box}>
-          <h1 style={styles.title}>🌤️ Weather App</h1>
+          <h1 style={styles.title}>Check the weather 🌎</h1>
 
           <div style={styles.search}>
             <input
               type="text"
-              placeholder="Digite o nome da cidade"
+              placeholder="Enter the city name"
               value={city}
               onChange={(e) => setCity(e.target.value)}
               onKeyPress={handleKeyPress}
               style={styles.input}
             />
-            <button onClick={fetchWeather} style={styles.button}>Buscar</button>
+            <button onClick={fetchWeather} style={styles.button}>Search</button>
           </div>
 
           {error && <p style={styles.error}>{error}</p>}
@@ -124,7 +125,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    padding: '20px',
+    padding: '10px',
     background: 'linear-gradient(to bottom, #83a4d4, #b6fbff)',
     fontFamily: 'Arial, sans-serif',
   },
@@ -138,6 +139,7 @@ const styles = {
     maxWidth: '400px',
   },
   title: {
+    fontSize: '26px',
     marginBottom: '20px',
   },
     city: {
@@ -160,6 +162,7 @@ const styles = {
   },
   search: {
     display: 'flex',
+    flexWrap: 'wrap',
     gap: '10px',
     marginBottom: '20px',
   },
